@@ -1,0 +1,31 @@
+@switch (buttonType) { @case ("flat") {
+<button mat-flat-button>
+	@if (icon) {
+	<mat-icon>{{ icon }}</mat-icon>
+	} @if (label) {
+	<span>{{ label }}</span>
+	}
+</button>
+} @case ("raised") {
+<button mat-raised-button>
+	@if (icon) {
+	<mat-icon>{{ icon }}</mat-icon>
+	} @if (label) {
+	<span>{{ label }}</span>
+	}
+</button>
+} @case ("icon") {
+<button mat-icon-button>
+	@if (icon) {
+	<mat-icon>{{ icon }}</mat-icon>
+	}
+</button>
+} @default {
+<button mat-button>
+	@if (icon) {
+	<mat-icon>{{ icon }}</mat-icon>
+	} @if (label) {
+	<span>{{ label }}</span>
+	}
+</button>
+}}

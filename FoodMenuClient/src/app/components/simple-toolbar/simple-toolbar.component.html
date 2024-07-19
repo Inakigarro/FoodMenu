@@ -1,0 +1,15 @@
+<mat-toolbar class="toolbar">
+	<!-- Icon button -->
+	@if (iconButton.length > 0) {
+	<app-simple-button
+		[buttonType]="'icon'"
+		[icon]="iconButton"
+	></app-simple-button>
+	}
+	<!-- Spacer -->
+	<span class="spacer"></span>
+	<!-- Toolbar title -->
+	@if (title.length > 0) {
+	<span>{{ title }}</span>
+	}
+</mat-toolbar>

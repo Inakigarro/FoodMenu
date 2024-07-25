@@ -1,5 +1,9 @@
 <div class="layout">
-	<mat-toolbar class="toolbar">
+	<mat-toolbar
+		role="toolbar"
+		class="toolbar"
+	>
+		@if(mobileQuery.matches) {
 		<button
 			mat-icon-button
 			(click)="sideNav.toggle()"
@@ -10,6 +14,7 @@
 			<mat-icon>menu</mat-icon>
 			}
 		</button>
+		}
 		<span class="spacer"></span>
 		<h1>Menu de Comidas</h1>
 	</mat-toolbar>
@@ -17,12 +22,22 @@
 		<mat-sidenav
 			#sideNav
 			class="sidenav"
+			role="navigation"
 			[mode]="mobileQuery.matches ? 'over' : 'side'"
-			[fixedInViewport]="mobileQuery.matches"
-			fixedTopGap="56"
-		></mat-sidenav>
-		<mat-sidenav-content>
-			<app-item-card></app-item-card>
+		>
+			<mat-list>
+				@for (item of tabs; track $index) {
+				<mat-list-item>{{ item }}</mat-list-item>
+				}
+			</mat-list>
+		</mat-sidenav>
+		<mat-sidenav-content role="main">
+			@if(mobileQuery.matches) {
+			<app-list [items]="itemList" />
+			<footer style="text-align: center"><span>Awesome footer</span></footer>
+			} @else {
+			<app-tabs [tabs]="tabs" />
+			}
 		</mat-sidenav-content>
 	</mat-sidenav-container>
 </div>

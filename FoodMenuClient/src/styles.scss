@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 @use '@angular/material-experimental' as matx;
 @use './app/app.theme.scss' as app;
+@use './app/item-card/item-card.theme.scss' as item-card;
 
 // output from @debug matx.$m3-azure-palette
 $my-m3-colours: (
@@ -119,6 +120,7 @@ $theme: mat.define-theme(
 :root {
   @include mat.all-component-themes($theme);
   @include app.theme($theme);
+  @include item-card.theme($theme);
 }
 
 html, body { 

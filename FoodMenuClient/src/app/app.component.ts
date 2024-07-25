@@ -8,6 +8,31 @@ import { MediaMatcher } from '@angular/cdk/layout';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnDestroy {
+  public tabs: string[] = ["Hamburguesas", "Papas", "Gaseosas"]
+  public itemList = [
+    {
+      correlationId: '1',
+      displayName: 'Hamburguesa Simple',
+      description: 'Pan de papa, 140gr de carne, 2x cheddar',
+      price: 100,
+      imagePath: '../assets/hamburgers/smaple-hamburger-150.png',
+    },
+    {
+      correlationId: '1',
+      displayName: 'Hamburguesa Simple',
+      description: 'Pan de papa, 140gr de carne, 2x cheddar',
+      price: 100,
+      imagePath: '../assets/hamburgers/smaple-hamburger-150.png',
+    },
+    {
+      correlationId: '1',
+      displayName: 'Hamburguesa Simple',
+      description: 'Pan de papa, 140gr de carne, 2x cheddar',
+      price: 100,
+      imagePath: '../assets/hamburgers/smaple-hamburger-150.png',
+    }
+  ];
+
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;

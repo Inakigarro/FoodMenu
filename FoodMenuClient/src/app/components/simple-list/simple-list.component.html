@@ -1,0 +1,15 @@
+<mat-list
+	class="list-card"
+	role="list"
+>
+	@for (item of items; track $index) {
+	<app-item-card
+		class="list-item-card"
+		role="listitem"
+		[imagePath]="item.imagePath"
+		[itemName]="item.displayName"
+		[itemDescription]="item.description"
+		[itemPrice]="item.price"
+	/>
+	}
+</mat-list>

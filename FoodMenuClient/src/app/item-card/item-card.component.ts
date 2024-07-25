@@ -14,4 +14,7 @@ export class ItemCardComponent {
 
     @Input()
     public itemDescription: string = "";
+
+    @Input()
+    public itemPrice: number = 0;
 }

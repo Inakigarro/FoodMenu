@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="item-card">
 	<mat-card-header class="header">
 		<img
 			src="{{ imagePath }}"
@@ -9,4 +9,12 @@
 			<mat-card-subtitle>{{ itemDescription }}</mat-card-subtitle>
 		</mat-card-title-group>
 	</mat-card-header>
+	<mat-card-footer class="footer-card">
+		<span>{{ itemPrice }}</span>
+		<app-simple-button
+			[buttonType]="'raised'"
+			[icon]="'add_shopping_cart'"
+			[label]="'Agregar'"
+		></app-simple-button>
+	</mat-card-footer>
 </mat-card>
